@@ -9,6 +9,13 @@
     <%= f.input :price %>
     <%= f.association :category %>
   </div>
+  <div class="field">
+    <%= f.label :image %>
+    <%= f.file_field :image %>
+    </div>
+    
+    
+  </div>
 
   <div class="form-actions">
     <%= f.button :submit %>

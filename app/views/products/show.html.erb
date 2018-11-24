@@ -4,7 +4,9 @@
   <strong>Name:</strong>
   <%= @product.name %>
 </p>
-
+<div style="width:400px; height:auto">
+<%= link_to image_tag(@product.image, style:'width:100%'), product_path %>
+</div>
 <p>
   <strong>Description:</strong>
   <%= @product.description %>
