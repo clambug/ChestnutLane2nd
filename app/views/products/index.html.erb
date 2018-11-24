@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Products | <%= link_to "New Category", new_category_path %></h1>
+<br>
+<hr>
+<br>
+All Categories<br>
+<% Category.all.each do |cat| %>
+<%= link_to cat.name, products_path(category: cat.name)
+%>
+<br>
+<% end %>
+<br>
+<hr>
+<br>
+Navigation only<br>
+<% Category.where(display_in_nav: true).each do |cat| %>
+<%= link_to cat.name, products_path(category: cat.name)
+%>
+<br>
+<% end %>
+<br>
+<hr>
+<br>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Price</th>
+      <th>Category</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+        <td><%= product.name %></td>
+        <td><%= product.description %></td>
+        <td><%= product.price %></td>
+        <td><%= product.category.name %></td>
+        <td><%= link_to 'Show', product %></td>
+        <td><%= link_to 'Edit', edit_product_path(product) %></td>
+        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Product', new_product_path %>
