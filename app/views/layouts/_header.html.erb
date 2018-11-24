@@ -1,1 +1,33 @@
-<h1>WASAAAAPPPPP</h1>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#"> <%= image_tag("logo.png") %></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarText">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Features</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Pricing</a>
+      </li>
+    </ul>
+    <span class="navbar-text ">
+     <li class="nav-item">
+        <% if current_user %>
+        <a><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></a>
+      </li>
+      <li class="nav-item">
+        <% else %>
+        <a><%= link_to "Sign In", new_user_session_path %></a>
+      </li>      
+      <li class="nav-item">
+       <a><%= link_to "Register", new_user_registration_path %></a>
+       <% end %>
+      </li>
+    </span>
+  </div>
+</nav>
