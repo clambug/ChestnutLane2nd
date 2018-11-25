@@ -54,6 +54,11 @@ ul {
 .container {
     background-color: #f9f8f3;
 }
+@media (min-width: 1200px){
+.container {
+    max-width: 1600px !important;
+}
+}
 body {
     background: #f9f8f3 !important;
 }
@@ -73,4 +78,90 @@ body {
     overflow: auto;
     background-position: center;
 }
+
+
+/*PRODUCTS*/
+td.weeimg {
+    width: 10px;
+    height: 20px;
+    border: 5px solid transparent;
+    overflow: hidden;
+    border-radius: 35px;
+}
+
+
+
+
+
+
+
+#itemsContainer {
+    width: 100%;
+    text-align: center;
+    
+    
+}
+
+
+#itemsContainer h1 {
+   display: block;
+    color: #707070;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    
+    
+}
+
+
+.itemhols {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    display: inline-block;
+    width: 22%;
+    padding:10px;
+    min-height: 300px;
+   
+}
+
+
+.itemhols h1 {
+   display: block;
+    color: #707070;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 20px
+    
+}
+
+
+.itemhols p {
+   display: block;
+    color: #707070;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 16px
+    
+}
+
+
+
+
+
+.button {
+    background-color: #707070;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
 
