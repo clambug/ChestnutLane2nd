@@ -4,8 +4,14 @@
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse nav" id="navbarText">
-    <ul class="navbar-nav mr-auto">
+    <ul class="navbar-navi mr-auto">
       <li class="nav-item active">
+     <li class="nav-item">
+       <% if current_user && current_user.admin %>
+        <a><%= link_to "New Category", new_category_path %></a>
+      </li>
+      <% end %>
+
     </ul>
     <span class="navbar-text ">
      <li class="nav-item">

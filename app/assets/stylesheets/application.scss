@@ -19,6 +19,14 @@ border-bottom: 1px solid #bdbdbd;
     font-weight: 600;
     text-transform: uppercase;
 }
+
+.navbar-navi a {
+    color: #6b724b  !important;
+    padding-left: 14px;
+    font-weight: 600;
+    display: inline-block;
+    padding-top: 13px;
+}
 /*Home Main Slide*/
 .homeSlide{
     background: url("slide.jpg");
@@ -47,6 +55,43 @@ li a {
 ul {
     list-style-type: none;
     overflow: hidden;
+}
+
+/*SEARCH*/
+
+input[type="submit"] {
+    color: #fff;
+    background: #d5544f;
+    border: 1px solid transparent;
+    text-transform: uppercase;
+    padding: 9px 32px;
+    border-radius: 0px 3px 3px 0px;
+}
+
+input[type="submit"]:hover {
+    color: #fff;
+    background: #447675;
+    border: 1px solid transparent;
+    text-transform: uppercase;
+    padding: 9px 32px;
+    border-radius: 0px 3px 3px 0px;
+}
+
+input {
+    padding: 8px 50px;
+}
+
+input, button, select, optgroup, textarea {
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    margin-right: -4px;
+}
+
+.searchs {
+    margin-top: 276px;
+    text-align: center;
 }
 
 /*BODY*/
@@ -147,22 +192,20 @@ td.weeimg {
     
 }
 
-
-
-
-
-.button {
-    background-color: #707070;
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
+/*FORMS*/
+form {
+    margin: 0 auto;
+    width: 80%;
+    max-width: 700px;
 }
+
+input.btn {
+    color: #fff;
+    background: #d5544f;
+    text-transform: uppercase;
+}
+
+
 
 /*CART PAGE*/
 
@@ -201,18 +244,17 @@ td.weeimg {
 
 
 .button {
-    background-color: #4CAF50;
+    background-color: #d84f5c;
     border: none;
     color: white;
-    padding: 15px 32px;
+    padding: 2px 9px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
+    font-size: 13px;
     margin: 4px 2px;
     cursor: pointer;
 }
-
 
 
 #customers {
