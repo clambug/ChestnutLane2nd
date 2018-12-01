@@ -65,7 +65,32 @@ class CartController < ApplicationController
   end
   
   
-  
+  def createOrder
+    
+    @user = User.find(current_user.id)
+    
+    @order = @user.orders.build(:order_date => DateTime.now, :status => 'Pending')
+    
+    @order.save
+    
+    @cart = session[:cart] || {}
+    
+    @cart.each do | id, quantity |
+      product = Product.find_by_id(id)
+      
+      @orderproduct = @order.orderproducts.build(:product_id => product.id, :name => product.name, :description => product.description, :quantity => quantity, :price => product.price)
+      
+      @orderproduct.save
+      
+    end
+    
+    @orders = Order.all
+    
+    @orderproducts = Orderproduct.where(order_id: Order.last)
+    
+    session[:cart] = nil
+    
+  end
   
   
   
