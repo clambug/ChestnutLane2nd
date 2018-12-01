@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_30_174118) do
+ActiveRecord::Schema.define(version: 2018_12_01_145516) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -39,6 +39,27 @@ ActiveRecord::Schema.define(version: 2018_11_30_174118) do
     t.boolean "display_in_nav", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "orderproducts", force: :cascade do |t|
+    t.integer "product_id"
+    t.string "name"
+    t.text "description"
+    t.integer "quantity"
+    t.decimal "price"
+    t.integer "order_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["order_id"], name: "index_orderproducts_on_order_id"
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.datetime "order_date"
+    t.integer "user_id"
+    t.string "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
   create_table "products", force: :cascade do |t|
