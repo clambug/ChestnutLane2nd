@@ -10,9 +10,6 @@ class UserController < ApplicationController
         session[:login] = nil
         flash[:notice] = "Come again!!"
     end
-    
-    
-    
-    
+
     
 end

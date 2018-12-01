@@ -280,3 +280,26 @@ input.btn {
     color: white;
 }
 
+/*COLLECTIONS*/
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: "grdlft grdmddle grdrght" "grdlft grdmddle grdrght";
+}
+
+.grdmddle { grid-area: grdmddle; }
+
+.grdlft { grid-area: grdlft; }
+
+.grdrght {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: "grdtp" "grdbttm";
+  grid-area: grdrght;
+}
+
+.grdtp { grid-area: grdtp; }
+
+.grdbttm { grid-area: grdbttm; }

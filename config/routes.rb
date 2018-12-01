@@ -7,11 +7,12 @@ Rails.application.routes.draw do
   get 'pages/contact'
   root 'pages#about'
   
+  get '/cart/clear', to: 'cart#clearCart'
   get '/cart/:id', to: 'cart#add'
   
   get '/cart/remove/:id', to: 'cart#remove'
-  
   post '/search' => 'products#search'
+  
   
 
   
