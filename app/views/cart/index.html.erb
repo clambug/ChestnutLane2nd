@@ -2,6 +2,10 @@
 <h1>cartycartcart</h1>
 <div id ="itemsContainer">
     
+    <% if@cart.empty? %>
+    <p>Please add some products</p>
+    <% end %>
+    
     <table id="customers">
         <% total = 0 %>
         <% @cart.each do |id, quantity| %>
@@ -32,9 +36,14 @@
         
         <% end %>
         <tr>
+            <td>
             Total: <%= number_to_currency(total, :unit => "€") %>
-            
+            </td>
         </tr>
+        <td>
+            <a href="/cart/clear" class="button">Clear Cart</a>
+            
+        </td>
         
         
     </table>

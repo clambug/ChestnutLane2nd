@@ -1,4 +1,5 @@
 class CartController < ApplicationController
+  before_action :authenticate_user!
   
   def add
     # get product id
@@ -58,6 +59,10 @@ class CartController < ApplicationController
     
   end
   
+  def clearCart
+    session[:cart] = nil
+    redirect_to :action => :index
+  end
   
   
   
