@@ -5,10 +5,11 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   
   validates :name, presence: true
+  
          
          def user_params
            
-           params.require(:user).permit(:name, :email, :password_confirmation, :remember_me)
+           params.require(:user).permit(:name, :vendor, :email, :password_confirmation, :remember_me)
          end
          
          has_many:orders, dependent: :destroy

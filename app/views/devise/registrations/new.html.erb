@@ -18,6 +18,8 @@
     <%= f.input :password_confirmation,
                 required: true,
                 input_html: { autocomplete: "new-password" } %>
+    <p>Do you require a store to sell products? <br>
+    <%= f.select :vendor, options_for_select([["Choose account type..."], ["Yes I would like to start selling.", true], ["No thanks i'm just here to buy.", false]]) %></p>
   </div>
 
   <div class="form-actions">
