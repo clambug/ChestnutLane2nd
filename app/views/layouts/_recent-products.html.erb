@@ -10,6 +10,7 @@
           <br><%= number_to_currency(product.price, :unit =>"€") %>
           <br>
           <%= product.category.name %>
+          
           <br>
         <a href="/cart/<%= product.id %>" class ="button">Add to Cart</a>
         <%= link_to 'Show', product,  :class =>"button", :role=>"button" %>

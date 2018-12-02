@@ -6,5 +6,5 @@ class Order < ApplicationRecord
       
   end
   
-  has_many:orderproducts
+  has_many:orderproducts, dependent: :destroy
 end

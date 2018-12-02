@@ -3,11 +3,14 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+  
+  validates :name, presence: true
          
          def user_params
            
-           params.require(:user).permit(:email, :password_confirmation, :remember_me)
+           params.require(:user).permit(:name, :email, :password_confirmation, :remember_me)
          end
          
-         has_many:orders
+         has_many:orders, dependent: :destroy
+         has_many:products, dependent: :destroy
 end
