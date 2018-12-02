@@ -4,6 +4,9 @@ class ProductsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   before_action :check_user, only: [:edit, :update, :destroy]
   
+  def vendor
+    @products = Product.where(user: current_user).order("created_at DESC")
+  end
 
   # GET /products
   # GET /products.json
@@ -13,7 +16,7 @@ class ProductsController < ApplicationController
       @category = Category.find_by_name(params[:category])
       @products = Product.where(category: @category)
     else
-    @products = Product.all
+    @products = Product.all.order("created_at DESC")
     end
   end
 
