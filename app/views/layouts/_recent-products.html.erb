@@ -9,8 +9,7 @@
          <br class="prodtit"><%= product.name %>
           <br><%= number_to_currency(product.price, :unit =>"€") %>
           <br>
-          <%= product.category.name %>
-          
+          <p><%= link_to image_tag("ellipse.png"), root_path %>  <%= product.user.name %></p>
           <br>
         <a href="/cart/<%= product.id %>" class ="button">Add to Cart</a>
         <%= link_to 'Show', product,  :class =>"button", :role=>"button" %>
