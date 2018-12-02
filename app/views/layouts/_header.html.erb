@@ -16,7 +16,7 @@
     <span class="navbar-text ">
      <li class="nav-item">
         <% if current_user %>
-        <a href='#'>Hi <%= current_user.email %></a>
+        <a href='#'>Hi <%= current_user.name %></a>
         <a><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></a>
       </li>
        <li class="nav-item">
