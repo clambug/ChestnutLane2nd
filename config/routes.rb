@@ -23,6 +23,7 @@ Rails.application.routes.draw do
     resources:orders
   end
   
+  get 'vendor' => "products#vendor"
   
   resources :categories
   resources :products
