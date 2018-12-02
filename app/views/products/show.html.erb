@@ -26,6 +26,7 @@
   <strong>Vendor:</strong>
   <%= @product.user_id %>
 </p>
-
+<% if current_user == @product.user %>
 <%= link_to 'Edit', edit_product_path(@product) %> |
 <%= link_to 'Back', products_path %>
+<% end %>

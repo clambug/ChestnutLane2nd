@@ -6,14 +6,11 @@
       <div class="col-md-3">
         <%= link_to image_tag(product.thumbnail), product, style:'width:100%' %>
         
-         <br class="prodtit"><%= product.name %>
+         <br class="prodtit"><%= product.name %>  <a href="/cart/<%= product.id %>" class ="button">Add to Cart</a>
           <br><%= number_to_currency(product.price, :unit =>"€") %>
           <br>
-          <p><%= link_to image_tag("ellipse.png"), root_path %>  <%= product.user.name %></p>
-          <br>
-        <a href="/cart/<%= product.id %>" class ="button">Add to Cart</a>
-        <%= link_to 'Show', product,  :class =>"button", :role=>"button" %>
-        <% if user_signed_in? %>
+          <p><%= link_to image_tag("ellipse.png"), product %>  <%= product.user.name %> </p>
+        <% if (user_signed_in?) && (current_user == product.user) %>
         <%= link_to 'Edit', edit_product_path(product), :class =>"button", :role=>"button" %>
         <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' },  :class =>"button", :role=>"button" %>
         <% end %>
