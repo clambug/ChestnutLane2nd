@@ -1,6 +1,9 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:show, :index]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  before_action :check_user, only: [:edit, :update, :destroy]
+  
 
   # GET /products
   # GET /products.json
@@ -84,4 +87,12 @@ class ProductsController < ApplicationController
     def product_params
       params.require(:product).permit(:name, :description, :price, :category_id, :image)
     end
+    
+    #Authenticet user for product ownership
+    def check_user
+      if current_user != @product.user
+        redirect_to root_url, alert: "You must own this product to do that"
+      end
+    end
+  
 end
