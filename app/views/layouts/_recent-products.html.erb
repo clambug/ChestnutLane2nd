@@ -1,20 +1,17 @@
-   <h3 style="text-align: center">NEWEST ITEMS</h3>
+   <h3 style="text-align: center; margin-top: 60px;  margin-bottom: 50px">Newest Items</h3>
 
    <div class="container">
    <div class="row">
-    <% @products.limit(4).each do |product| %>
+    <% @products.limit(8).order("created_at DESC").each do |product| %>
       <div class="col-md-3">
         <%= link_to image_tag(product.thumbnail), product, style:'width:100%' %>
         
-         <br class="prodtit"><%= product.name %>  <a href="/cart/<%= product.id %>" class ="button">Add to Cart</a>
+         <br><strong><%= product.name %> </strong>
           <br><%= number_to_currency(product.price, :unit =>"€") %>
           <br>
           <p><%= link_to image_tag("ellipse.png"), product %>  <%= product.user.name %> </p>
-        <% if (user_signed_in?) && (current_user == product.user) %>
-        <%= link_to 'Edit', edit_product_path(product), :class =>"button", :role=>"button" %>
-        <%= link_to 'Delete', product, method: :delete, data: { confirm: 'Are you sure?' },  :class =>"button", :role=>"button" %>
-        <% end %>
         </p>
+        <br>
       </div>
     <% end %>
     </div>

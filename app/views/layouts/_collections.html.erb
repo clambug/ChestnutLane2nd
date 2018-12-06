@@ -1,29 +1,14 @@
-
-<div class="container">
-<h1 style="text-align: center">Handpicked Collections</h1>
-
-<div class="container">
-  <div class="row">
-    <div class="col-sm-4">
-      <%= link_to image_tag("collections3.jpeg"), root_path %>
-      <div class="row">
-        <div class="col-sm-4 other">
-         <%= link_to image_tag("collections3.jpeg"), root_path %>
-        </div>
-        <div class="col-sm-4 other2">
-          <%= link_to image_tag("collections3.jpeg"), root_path %>
-        </div>
+   <h3 style="text-align: center">Handpicked Collections</h3>
+   
+   <div class="container">
+   <div class="row">
+    <% Category.limit(3).where(display_in_nav: false).each do |cat| %>
+      <div class="col-md-4">
+        <br><%= link_to image_tag(cat.thumbnail), products_path(category: cat.name), style:'width:100%' %></br>
+        <div class="titover"><h4><%= cat.name %></h4></div>
+        
       </div>
-    </div>
-    <div class="row">
-    <div class="col-sm-3 ">
-      <%= link_to image_tag("collections1.jpeg"), root_path %>
-    </div>
-    <div class="col-sm-3 ">
-     <%= link_to image_tag("collections1.jpeg"), root_path %>
-     </div>
-    </div>
-  </div>
-</div>
-
-
+      <% end %>
+      </div>
+      </div>
+      

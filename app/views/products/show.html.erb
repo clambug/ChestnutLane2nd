@@ -1,32 +1,42 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @product.name %>
+<div class="container">
+<div class="container-shop">
+<h5 style="text-align: left; color: #427674"> You are viewing <%= @product.name %></h5>
+<hr>
+<div class="row">
+<div class="col-md-6" style=><%= link_to image_tag(@product.page), product_path %></div>
+<div class="col-md-6">
+  <p>
+  
+
 </p>
-<div style="width:400px; height:auto">
-<%= link_to image_tag(@product.thumbnail, style:'width:100%'), product_path %>
-</div>
+  <p>
+
+  <h1><%= @product.name %></h1>
+  <h1><%= number_to_currency(@product.price, :unit =>"€") %></h1>
+</p>
 <p>
-  <strong>Description:</strong>
+
   <%= @product.description %>
 </p>
-
 <p>
-  <strong>Price:</strong>
-  <%= @product.price %>
-</p>
 
+   
+   <p><a href="/cart/<%= @product.id %>" class ="cartbut">Add to Cart</a></p>
+</p>
+<strong>Sold By:</strong> <%= @product.user.name %> 
 <p>
   <strong>Category:</strong>
   <%= @product.category.name %>
 </p>
-
-<p>
-  <strong>Vendor:</strong>
-  <%= @product.user_id %>
-</p>
+ 
+</div>
+</div>
+</div>
+</div>
 <% if current_user == @product.user %>
 <%= link_to 'Edit', edit_product_path(@product) %> |
 <%= link_to 'Back', products_path %>
 <% end %>
+

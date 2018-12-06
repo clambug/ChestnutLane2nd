@@ -1,51 +1,29 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Products | <%= link_to "New Category", new_category_path %></h1>
+<br>
+   <h3 style="text-align: center">PRODUCTS</h3>
 <br>
 <hr>
-<br>
-All Categories<br>
-<% Category.all.each do |cat| %>
-<%= link_to cat.name, products_path(category: cat.name)
-%>
-<br>
-<% end %>
-<br>
-<hr>
-<br>
-Navigation only<br>
-<% Category.where(display_in_nav: true).each do |cat| %>
-<%= link_to cat.name, products_path(category: cat.name)
-%>
-<br>
-<% end %>
-<br>
-<hr>
-<br>
 
+<% Category.all.each do |cat| %>
+<% end %>
+<% Category.where(display_in_nav: true).each do |cat| %>
+<% end %>
    <div class="container">
+   <div class="row">
     <% @products.each do |product| %>
-      <div class="itemhols">
-        <%= link_to image_tag(product.thumbnail), product, style:'width:100%', :class =>"img-fluid img-thumbnail" %>
+       <div class="col-md-3">
+        <%= link_to image_tag(product.thumbnail), product, style:'width:100%' %>
         
-         <p><%= product.name %>
-         </p>
-          <p><%= product.price %>
+         <br><strong><%= product.name %> </strong>
+          <br><%= number_to_currency(product.price, :unit =>"€") %>
           <br>
-          <%= product.category.name %>
-          <%= product.user.name %>
-          </p>
-        <p></p>
-        <a href="/cart/<%= product.id %>" class ="button">Add to Cart</a>
-        <%= link_to 'Show', product,  :class =>"button", :role=>"button" %>
-        <%= link_to 'Edit', edit_product_path(product), :class =>"button", :role=>"button" %>
-        <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' },  :class =>"button", :role=>"button" %>
+          <p><%= link_to image_tag("ellipse.png"), product %>  <%= product.user.name %> </p>
         </p>
+        <br>
       </div>
     <% end %>
     </div>
+    </div>
 
 
-<br>
-
-<%= link_to 'New Product', new_product_path %>

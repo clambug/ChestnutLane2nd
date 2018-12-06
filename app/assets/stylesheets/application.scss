@@ -124,6 +124,10 @@ body {
     background-position: center;
 }
 
+.searchsf {
+    margin-top: 172px;
+    text-align: center;
+}
 
 /*PRODUCTS*/
 td.weeimg {
@@ -290,27 +294,35 @@ select#user_vendor {
 }
 
 /*COLLECTIONS*/
-.grid-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  grid-template-areas: "grdlft grdmddle grdrght" "grdlft grdmddle grdrght";
+.titover {
+    position: absolute;
+    margin-top: -56px;
+    background: #ffffffc7;
+    padding: 10px;
+    color: #88302d;
 }
 
-.grdmddle { grid-area: grdmddle; }
+/*PRODUCT PAGE*/
 
-.grdlft { grid-area: grdlft; }
-
-.grdrght {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr 1fr;
-  grid-template-areas: "grdtp" "grdbttm";
-  grid-area: grdrght;
+.container-shop {
+    max-width: 1200px !important;
 }
 
-.grdtp { grid-area: grdtp; }
+.cartbut {
+    color: #fff;
+    background: #d5544f;
+    border: 1px solid transparent;
+    text-transform: uppercase;
+    padding: 9px 32px;
+    border-radius: 0px 3px 3px 0px;
+}
 
-.grdbttm { grid-area: grdbttm; }
-
-
+.cartbut:hover {
+    color: #fff;
+    background: #447675;
+    border: 1px solid transparent;
+    text-transform: uppercase;
+    padding: 9px 32px;
+    border-radius: 0px 3px 3px 0px;
+    text-decoration: none;
+}

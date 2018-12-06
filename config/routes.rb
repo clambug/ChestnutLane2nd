@@ -15,6 +15,8 @@ Rails.application.routes.draw do
   
   get '/checkout', to: 'cart#createOrder'
   
+  get '/paid', to: 'pages#paid'
+  
   get 'cart/index'
   get '/cart', to: 'cart#index'
  
